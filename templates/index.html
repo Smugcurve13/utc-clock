@@ -22,8 +22,8 @@
             var istMinutes = istTime.getUTCMinutes();
             var istSeconds = istTime.getUTCSeconds();
 
-            document.getElementById('utc-clock').innerHTML = "UTC: " + utcHours + ":" + utcMinutes + ":" + utcSeconds;
-            document.getElementById('ist-clock').innerHTML = "IST: " + istHours + ":" + istMinutes + ":" + istSeconds;
+            document.getElementById('utc-clock').innerHTML = "UTC: " + utcHours.toString().padStart(2, '0') + ":" + utcMinutes.toString().padStart(2, '0') + ":" + utcSeconds.toString().padStart(2, '0');
+            document.getElementById('ist-clock').innerHTML = "IST: " + istHours.toString().padStart(2, '0') + ":" + istMinutes.toString().padStart(2, '0') + ":" + istSeconds.toString().padStart(2, '0');
         }
 
         setInterval(updateClock, 1000);
