@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UTC Clock</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="clock-container">
+        <div class="clock" id="utc-clock"></div>
+        <div class="clock" id="ist-clock"></div>
+    </div>
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var utcHours = now.getUTCHours();
+            var utcMinutes = now.getUTCMinutes();
+            var utcSeconds = now.getUTCSeconds();
+
+            var istOffset = 5.5 * 60 * 60 * 1000;
+            var istTime = new Date(now.getTime() + istOffset);
+            var istHours = istTime.getUTCHours();
+            var istMinutes = istTime.getUTCMinutes();
+            var istSeconds = istTime.getUTCSeconds();
+
+            document.getElementById('utc-clock').innerHTML = "UTC: " + utcHours + ":" + utcMinutes + ":" + utcSeconds;
+            document.getElementById('ist-clock').innerHTML = "IST: " + istHours + ":" + istMinutes + ":" + istSeconds;
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
