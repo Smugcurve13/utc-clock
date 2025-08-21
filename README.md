@@ -18,7 +18,7 @@ When I was working on a project where I was constantly testing with UTC time for
 1.  Clone the repository:
 
     ```
-    git clone https://github.com/your-username/utc-clock.git
+    git clone https://github.com/Smugcurve13/utc-clock.git
     ```
 
 2.  Install the dependencies:
